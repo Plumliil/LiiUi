@@ -3,6 +3,18 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "main": "./dist/lii-ui.umd.js",
+  "module": "./dist/lii-ui.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/lii-ui.es.js",
+      "require": "./dist/lii-ui.umd.js"
+    },
+    "./dist/style.css": {
+      "import": "./dist/style.css",
+      "require": "./dist/style.css"
+    }
+  },
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
@@ -12,7 +24,9 @@
     "vue": "^3.2.37"
   },
   "devDependencies": {
+    "@types/node": "^18.11.3",
     "@vitejs/plugin-vue": "^3.1.0",
+    "less": "^4.1.3",
     "typescript": "^4.6.4",
     "vite": "^3.1.0",
     "vue-tsc": "^0.40.4"
