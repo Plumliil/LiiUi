@@ -1,5 +1,8 @@
-import { createApp } from 'vue'
-import './style.css'
-import App from './App.vue'
+import { createApp } from "vue";
+import "./style.css";
+import App from "./App.vue";
+import LiiUi from "../index";
 
-createApp(App).mount('#app')
+const app: any = createApp(App);
+app.use(LiiUi);
+app.mount("#app");
