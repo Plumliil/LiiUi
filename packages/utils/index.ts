@@ -1,0 +1,1 @@
+// const files = require.context('需要读取的文件路径', false, /.svg$/).keys();
