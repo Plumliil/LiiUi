@@ -3,7 +3,7 @@
 </template>
 
 <script lang="ts">
-import { h, ref, useSlots, computed, Ref } from "vue";
+import { h, ref, reactive, useSlots, computed, Ref, useAttrs } from "vue";
 export default {
   name: "liiSpace",
   props: {
@@ -19,14 +19,24 @@ export default {
   setup(props) {
     const slots: any = useSlots();
     const slotList: Ref<any> = ref([]);
+    const attrs: any = useAttrs();
+    console.log();
+
     const tStyle = computed(() => {
-      return {
+      let res = reactive(attrs.style);
+      let liiStyle = {
         display: props.inline ? "inline-flex" : "flex",
         gap: props.inline
           ? `${props.size[0]}px`
           : `${props.size[0]}px ${props.size[1]}px`,
         "flex-direction": props.inline ? "inherit" : "column",
       };
+      for (const key in liiStyle) {
+        console.log(key);
+        res[key] = liiStyle[key];
+      }
+
+      return res;
     });
     slots.default().forEach((item, index) => {
       slotList.value.push(
