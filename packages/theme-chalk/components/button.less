@@ -1,0 +1,275 @@
+@import url('@/packages/theme-chalk/common/base.less');
+.lii-button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1;
+    height: 32px;
+    white-space: nowrap;
+    cursor: pointer;
+    text-align: center;
+    box-sizing: border-box;
+    outline: none;
+    transition: 0.3s;
+    user-select: none;
+    vertical-align: middle;
+    -webkit-appearance: none;
+    padding: 8px 16px;
+    font-size: 14px;
+    color: @lii-font-color;
+    border-radius: 4px;
+    border: 1px solid #dcdfe6;
+    &.lii-button--big {
+      width: 100px;
+      height: 40px;
+      font-size: (@lii-font-size / 4) * 5;
+    }
+  
+    &.lii-button--mid {
+      transform: scale(1);
+    }
+  
+    &.lii-button--small {
+      max-width: 50px;
+      height: 24px;
+      padding: 0;
+      font-size: (@lii-font-size / 4) * 3;
+    }
+  
+    &.lii-button--mini {
+      width: 60px;
+      height: 30px;
+      font-size: 9.6px;
+    }
+  
+    &:focus,
+    &:hover {
+      color: @primary;
+      background-color: #ecf5ff;
+      border: 1px solid @primary;
+    }
+  
+    &.is-disabled {
+      cursor: not-allowed;
+      color: #c0c4cc;
+      background-color: #ffffff;
+      border: 1px solid #ebeef5;
+    }
+  
+    // is-round圆角
+    &.is-round {
+      border-radius: 20px;
+    }
+  
+    // is-circle圆形
+    &.is-circle {
+      width: 32px;
+      height: 32px;
+      padding: 0;
+      border-radius: 50%;
+    }
+  
+    // is-plain朴素
+    &.is-plain {
+      &:hover,
+      &:focus {
+        color: @primary;
+        background-color: #fff;
+      }
+    }
+  
+    // 主要按钮
+    &.lii-button--primary {
+      color: #ffffff;
+      background-color: @primary;
+  
+      // hover状态
+      &:focus,
+      &:hover {
+        background-color: #66b1ff;
+      }
+  
+      // is-disabled禁用
+      &.is-disabled {
+        color: #ffffff;
+        cursor: not-allowed;
+        background-color: #a0cfff;
+        border: 1px solid #a0cfff;
+      }
+  
+      // is-plain朴素
+      &.is-plain {
+        color: @primary;
+        background-color: #ecf5ff;
+        border: 1px solid @primary;
+  
+        &:focus,
+        &:hover {
+          color: #ffffff;
+          background-color: #66b1ff;
+        }
+  
+        &.is-disabled {
+          color: #b4c9ff;
+          background-color: #ecf5ff;
+          border: 1px solid #d9ecff;
+        }
+      }
+    }
+  
+    // 成功按钮
+    &.lii-button--success {
+      color: #ffffff;
+      background-color: @success;
+  
+      &:focus,
+      &hover {
+        background-color: #85ce61;
+        border: 1px solid @success;
+      }
+  
+      // is-disabled禁用
+      &.is-disabled {
+        color: #ffffff;
+        cursor: not-allowed;
+        background-color: #b3e19d;
+        border: 1px solid #b3e19d;
+      }
+  
+      // is-plain朴素
+      &.is-plain {
+        color: #93c26d;
+        background-color: #f0f9eb;
+        border: 1px solid #93c26d;
+  
+        &:focus,
+        &:hover {
+          color: #ffffff;
+          background-color: @success;
+        }
+  
+        &.is-disabled {
+          color: #b5da89;
+          background-color: #f0f9eb;
+          border: 1px solid #b5da89;
+        }
+      }
+    }
+  
+    // 信息按钮
+    &.lii-button--info {
+      color: #ffffff;
+      background-color: @info;
+  
+      &:focus,
+      &:hover {
+        background-color: #a6a9ad;
+        border: 1px solid @info;
+      }
+  
+      // is-disabled禁用
+      &.is-disabled {
+        color: #ffffff;
+        cursor: not-allowed;
+        background-color: #c8c9cc;
+        border: 1px solid #c8c9cc;
+      }
+  
+      // is-plain朴素
+      &.is-plain {
+        background-color: #f4f4f5;
+        color: #9093b0;
+        border: 1px solid #9093b0;
+  
+        &:focus,
+        &:hover {
+          color: #ffffff;
+          background-color: @info;
+        }
+  
+        &.is-disabled {
+          color: #bcbec2;
+          background-color: #f4f4f5;
+          border: 1px solid #bcbec2;
+        }
+      }
+    }
+  
+    // 警告按钮
+    &.lii-button--warning {
+      color: #ffffff;
+      background-color: @warning;
+  
+      &:focus,
+      &:hover {
+        background-color: #ebb563;
+        border: 1px solid @warning;
+      }
+  
+      // is-disabled禁用
+      &.is-disabled {
+        color: #ffffff;
+        cursor: not-allowed;
+        background-color: #f3d19e;
+        border: 1px solid #f3d19e;
+      }
+  
+      // is-plain朴素
+      &.is-plain {
+        color: #efb43c;
+        background-color: #fdf6ec;
+        border: 1px solid #efb43c;
+  
+        &:focus,
+        &:hover {
+          color: #ffffff;
+          background-color: @warning;
+        }
+  
+        &.is-disabled {
+          color: #f0c7a3;
+          background-color: #fdf6ec;
+          border: 1px solid #f0c7a3;
+        }
+      }
+    }
+  
+    // 危险按钮
+    &.lii-button--danger {
+      color: #ffffff;
+      background-color: @danger;
+  
+      &:focus,
+      &:hover {
+        background-color: #f78989;
+        border: 1px solid @danger;
+      }
+  
+      // is-disabled禁用
+      &.is-disabled {
+        color: #ffffff;
+        cursor: not-allowed;
+        background-color: #fab6b6;
+        border: 1px solid #fab6b6;
+      }
+  
+      // is-plain朴素
+      &.is-plain {
+        color: @danger;
+        background-color: #fef0f0;
+        border: 1px solid #fbc4c4;
+  
+        &:focus,
+        &:hover {
+          color: #ffffff;
+          background-color: @danger;
+        }
+  
+        &.is-disabled {
+          color: #f9a7a7;
+          background-color: #fef0f0;
+          border: 1px solid #f9a7a7;
+        }
+      }
+    }
+  }

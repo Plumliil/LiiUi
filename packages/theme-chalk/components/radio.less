@@ -1,0 +1,98 @@
+@import url("@/packages/theme-chalk/common/base.less");
+.lii-radio {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  .lii-radio__item {
+    width: auto;
+    height: auto;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    line-height: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-right: 15px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    user-select: none;
+    span {
+      width: 14px;
+      height: 14px;
+      border-radius: 100%;
+      background-color: #fff;
+      position: relative;
+      cursor: pointer;
+      box-sizing: border-box;
+      border: 1px solid @lii-border-color-dark;
+      transition: transform 0.15s ease-in;
+      margin-right: 5px;
+      &::after {
+        width: 4px;
+        height: 4px;
+        border-radius: 100%;
+        background-color: #fff;
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin: -2px 0 0 -2px;
+        transition: transform 0.15s ease-in;
+      }
+      &.active {
+        background-color: @primary;
+        border: 1px solid @primary;
+        // background-color: v-bind("props.customColor");
+        // border: 1px solid v-bind("props.customColor");
+      }
+    }
+    &.active {
+      color: @primary;
+    }
+  }
+  .lii-radio__item--big {
+    font-size: 16.8px;
+    line-height: 24px;
+    span {
+      width: 16.8px;
+      height: 16.8px;
+      margin-top: 3px;
+      &::after {
+        width: 4.8px;
+        height: 4.8px;
+        margin: -2.4px 0 0 -2.4px;
+      }
+    }
+  }
+  .lii-radio__item--mid {
+    transform: scale(100%);
+  }
+  .lii-radio__item--small {
+    font-size: 9.8px;
+    line-height: 16px;
+    span {
+      width: 9.8px;
+      height: 9.8px;
+      margin-top: 3px;
+      &::after {
+        width: 2.8px;
+        height: 2.8px;
+        margin: -1.4px 0 0 -1.4px;
+      }
+    }
+  }
+  .lii-radio__item--inline {
+    display: inline-flex;
+  }
+  .lii-radio__item--disabled {
+    cursor: no-drop;
+    color: @disabled;
+    span {
+      border: @lii-border;
+      cursor: no-drop;
+      &::after {
+        background-color: @disabled;
+      }
+    }
+  }
+}

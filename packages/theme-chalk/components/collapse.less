@@ -1,0 +1,90 @@
+@import url('@/packages/theme-chalk/common/base.less');
+
+.lii-collapse-item {
+    max-width: 600px;
+    .header {
+        margin: 0;
+        width: 600px;
+        height: 40px;
+        line-height: 40px;
+        font-size: 13px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        box-sizing: border-box;
+
+        h4 {
+            position: relative;
+            margin: 0;
+            height: 100%;
+            width: 100%;
+            line-height: 40px;
+            z-index: 99;
+            // border-bottom: @lii-border;
+            // border-top: @lii-border;
+            box-sizing: border-box;
+        }
+
+        .activeB {
+            border: @lii-border;
+            border-bottom: @lii-border;
+        }
+
+        .activeD {
+            border: @lii-border;
+            border-top: none;
+            border-bottom: @lii-border;
+        }
+
+        .activeD::after {
+            content: '🞂';
+            font-size: 15px;
+            position: absolute;
+            right: 10px;
+        }
+
+        .activeB::after {
+            content: '⏷';
+            font-size: 15px;
+            position: absolute;
+            right: 10px;
+        }
+    }
+
+    .wrap {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 10px;
+        line-height: 30px;
+        border: @lii-border;
+        border-top: none;
+    }
+
+    .fade-enter-from {
+        opacity: 0;
+    }
+
+    .fade-enter-active {
+        opacity: 1;
+        animation: close .3s ease;
+    }
+
+    .fade-leave-to {
+        background-color: blue;
+    }
+    .fade-leave-active {
+        display: none;
+        transition: all .3s ease;
+    }
+
+    @keyframes close {
+        0% {
+            transform: translateY(-50px);
+        }
+
+        100% {
+            transform: translateY(0px);
+        }
+    }
+}

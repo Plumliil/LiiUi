@@ -1,0 +1,95 @@
+@import url("@/packages/theme-chalk/common/base.less");
+
+.lii-upload {
+    border: @lii-border;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: @lii-border-radius-base;
+
+    .file-input {
+        display: none;
+    }
+
+    .lii-upload-button {
+        box-sizing: content-box;
+        width: 70px;
+        height: 30px;
+        margin: 10px 10px;
+    }
+
+    .fileList-box {
+        box-sizing: content-box;
+        padding: 0;
+
+        li {
+            width: 240px;
+            height: 30px;
+            line-height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            span {
+                margin: 0 5px;
+                font-size: 16px;
+            }
+
+            .imgUrl {
+                font-size: 14px;
+                display: inline-block;
+                width: 200px;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                overflow: hidden;
+            }
+
+            .delete-span {
+                cursor: pointer;
+                margin-right: 5px;
+                font-weight: 800;
+                transition: 0.3s;
+
+                &:hover {
+                    color: red;
+                }
+            }
+        }
+    }
+
+    .area-box {
+        position: relative;
+        width: 120px;
+        height: 120px;
+        border: 1px dashed @lii-border-color;
+        margin: 10px;
+        transition: 0.5s ease;
+        box-sizing: border-box;
+
+        &::after {
+            position: absolute;
+            content: "+";
+            top: 50%;
+            left: 50%;
+            color: @lii-border-color;
+            transition: 0.5s ease;
+            transform: translate(-50%, -50%);
+            font-size: 40px;
+            font-weight: 100;
+        }
+
+        &:hover {
+            border: 1px dashed @primary;
+            cursor: pointer;
+
+            &::after {
+                color: @primary;
+            }
+        }
+    }
+
+    .activeArea {
+        border: 1px solid @primary;
+    }
+}

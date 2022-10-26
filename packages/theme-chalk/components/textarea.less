@@ -1,0 +1,41 @@
+@import url('@/packages/theme-chalk/common/base.less');
+
+.lii-textarea {
+    width: auto;
+    height: auto;
+    display: inline-block;
+    overflow: hidden;
+    position: relative;
+    textarea {
+      padding: 5px 5px 8px 8px;
+      outline: none;
+      border-radius: 4px;
+      font-size: 14px;
+      font-family: auto;
+      color: #505055;
+      &:focus {
+        border: 1px solid @primary;
+      }
+    }
+
+    textarea::placeholder {
+      color: #c6c8cc;
+    }
+
+    .max-length-line {
+      line-height: 20px;
+      font-size: 10px;
+      text-align: right;
+      padding: 0 10px;
+      color: #aeafb3;
+      position: absolute;
+      bottom: 0px;
+      right: 0;
+    }
+  }
+
+  .lii-textarea--disabled {
+    textarea {
+      cursor: no-drop;
+    }
+  }

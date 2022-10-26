@@ -1,0 +1,36 @@
+@import url('@/packages/theme-chalk/common/base.less');
+
+.lii-badge {
+  position: relative;
+  box-sizing: border-box;
+  line-height: 1;
+  height: 32px;
+
+  .lii-badge__content {
+    position: absolute;
+    background-color: #f56c6c;
+    color: aliceblue;
+    width: 18px;
+    height: 18px;
+    right: -7.5px;
+    top: -1px;
+    font-size: 12px;
+    border-radius: 9px;
+    line-height: 18px;
+    transform: translateX(100%) translateY(-50%);
+
+    &.is-fixed {
+      position: absolute;
+      right: 10px;
+      top: 0;
+      transform: translateX(100%) translateY(-50%);
+    }
+
+    &.is-dot {
+      right: 5px;
+      width: 8px;
+      height: 8px;
+      padding: 0;
+    }
+  }
+}
