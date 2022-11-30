@@ -1,5 +1,5 @@
 <template>
-  <div class="lii_notification right" v-if="show">
+  <div class="lii_notification right" v-if="show" ref="notice">
     <div class="lii_notification_group">
       <h3 class="lii_notification_title" v-text="title"></h3>
       <div class="lii_notification_content">
@@ -10,30 +10,10 @@
   </div>
 </template>
 
-<script lang="ts">
-// mounted() {
-//   this.isShow = true;
-//   if (this.duration !== 0) {
-//     setTimeout(() => {
-//       this.isShow = false;
-//     }, this.duration);
-//   }
-// },
-// methods: {
-//   hide() {
-//     this.isShow = false;
-//   },
-// },
-</script>
-
 <script lang="ts" setup>
-import { ref } from "vue";
-// interface Props {
-//   title: string;
-//   message: string;
-//   duration: number;
-//   isShow: boolean;
-// }
+import { time } from "console";
+import { onMounted, ref } from "vue";
+
 const props = defineProps({
   title: {
     type: String,
@@ -56,9 +36,36 @@ const props = defineProps({
   },
 });
 const show = ref(props.isShow);
-// setTimeout(() => {
-//   show.value = false;
-// }, props.duration);
+const notice = ref<null | HTMLElement>(null);
+let timer = setTimeout(() => {
+  show.value = false;
+  let topNum = document.querySelectorAll(
+    ".liiNotice"
+  ) as NodeListOf<HTMLElement>;
+
+  topNum.forEach((el) => {
+    if (el.innerHTML === "<!--v-if-->") {
+      document.body.removeChild(el);
+      console.log("el.innerHTML-<!--v-if-->", el.innerHTML);
+    }
+  });
+  // topNum[topNum.length - 1].style.top = 120 * topNum.length + 20 + "px";
+  clearTimeout(timer);
+}, props.duration);
+onMounted(() => {});
+onMounted(() => {
+  let topNum = document.querySelectorAll(
+    ".liiNotice"
+  ) as NodeListOf<HTMLElement>;
+  if (topNum.length > 0) {
+    topNum[topNum.length - 1].style.position='fixed'
+    topNum[topNum.length - 1].style.top = 120 * topNum.length + 20 + "px";
+  }
+  console.log(notice.value);
+  if (notice.value) {
+    notice.value.style.backgroundColor = "red";
+  }
+});
 const hide = () => {
   show.value = false;
 };

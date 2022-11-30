@@ -6,7 +6,7 @@ import liiSpace from "./space";
 import liiSelect from "./select";
 import liiRadio from "./radio";
 // import Message from "./message";
-// import liiNotice from "./notice";
+import liiNotice from "./notice";
 import liiCollapse from "./collapse";
 // import liiProgress from "./progress";
 import liiBadge from "./badge";
@@ -26,7 +26,6 @@ const components: any[] = [
   liiCollapse,
   liiDrag,
   liiUpload,
-  // liiNotice
 ];
-
-export { components };
+const funcs: any[] = [liiNotice];
+export { components,funcs };
